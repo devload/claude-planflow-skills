@@ -51,7 +51,7 @@ Planflow Skills는 Claude Code에서 사용할 수 있는 커스텀 슬래시 �
 
 ```bash
 # 저장소 클론
-git clone https://github.com/your-username/claude-planflow-skills.git
+git clone https://github.com/devload/claude-planflow-skills.git
 
 # 프로젝트에 복사
 cp -r claude-planflow-skills/.claude/commands/ /your/project/.claude/commands/

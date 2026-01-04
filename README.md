@@ -219,7 +219,30 @@ Update plan.md and tasks.md based on user feedback.
 
 ## Workflow
 
-### Complete Flowchart
+### Flowchart
+
+```mermaid
+flowchart TD
+    A["/planflow start"] --> B{"A. Load existing specs?"}
+    B -->|Yes| C["/boot"]
+    B -->|No| D
+    C --> D["B. Plan Generation"]
+    D --> E{"C. Convert to Speckit?"}
+    E -->|Yes| F["/plan2speckit"]
+    E -->|No| G
+    F --> G{"D. Any modifications?"}
+    G -->|Changes| H["/postplan"]
+    H --> G
+    G -->|No| I{"E. Start implementation?"}
+    I -->|Yes| J["Implementation Guide"]
+    I -->|No| K["Session End"]
+
+    style A fill:#6366f1,color:#fff
+    style J fill:#22c55e,color:#fff
+    style K fill:#ef4444,color:#fff
+```
+
+### Complete Flowchart (Text)
 
 ```
 ┌─────────────────────────────────────────────────────────────┐

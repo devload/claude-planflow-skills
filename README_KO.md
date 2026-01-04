@@ -217,7 +217,30 @@ specs/<feature>/
 
 ## 워크플로우
 
-### 전체 흐름도
+### 흐름도
+
+```mermaid
+flowchart TD
+    A["/planflow 시작"] --> B{"A. 기존 산출물 로드?"}
+    B -->|Yes| C["/boot"]
+    B -->|No| D
+    C --> D["B. Plan 생성"]
+    D --> E{"C. Speckit 변환?"}
+    E -->|Yes| F["/plan2speckit"]
+    E -->|No| G
+    F --> G{"D. 수정사항?"}
+    G -->|변경사항| H["/postplan"]
+    H --> G
+    G -->|No| I{"E. 구현 시작?"}
+    I -->|Yes| J["구현 가이드"]
+    I -->|No| K["세션 종료"]
+
+    style A fill:#6366f1,color:#fff
+    style J fill:#22c55e,color:#fff
+    style K fill:#ef4444,color:#fff
+```
+
+### 전체 흐름도 (텍스트)
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
